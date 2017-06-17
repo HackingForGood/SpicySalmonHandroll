@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  sinIn() {
+  signIn() {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
   }
@@ -25,6 +25,6 @@ class App extends Component {
       </div>
     );
   }
-}
+
 
 export default App;
