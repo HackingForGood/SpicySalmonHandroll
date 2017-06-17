@@ -323,6 +323,7 @@ CFC.prototype.toggleButton = function() {
   }
 };
 
+
 // Checks that the Firebase SDK has been correctly setup and configured.
 CFC.prototype.checkSetup = function() {
   if (!window.firebase || !(firebase.app instanceof Function) || !firebase.app().options) {
@@ -335,3 +336,8 @@ CFC.prototype.checkSetup = function() {
 window.onload = function() {
   window.CFC = new CFC();
 };
+
+$(document).ready(function() {
+    $('.tap-target').tapTarget('open');
+  }
+);
