@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "communities-for-communities"
+    "staging": "communities-for-communities",
+    "CFC": "communities-for-communities"
   }
 }
