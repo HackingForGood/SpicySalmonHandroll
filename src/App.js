@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import fire from './fire';
 
 class App extends Component {
   signIn() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+    var provider = new fire.auth.GoogleAuthProvider();
+    fire.auth().signInWithPopup(provider);
   }
 
   signOut() {
-    firebase.auth().signOut();
+    fire.auth().signOut();
   }
 
   render() {
@@ -25,6 +26,6 @@ class App extends Component {
       </div>
     );
   }
-
+}
 
 export default App;
