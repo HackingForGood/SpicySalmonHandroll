@@ -1,5 +1,2 @@
-# Firebase Web Codelab - Start code
-
-This folder contains the starting code for the [Firebase: Build a Real Time Web Chat App Codelab](https://codelabs.developers.google.com/codelabs/firebase-web/).
-
-If you'd like to jump directly to the end and see the finished code head to the [web](../web) directory.
+Communities for Communities [CFC]
+   CFC is a web app that allows users to create and search for communities based on geolocation. Communities can be private / invite-only or public for anyone to join. Community leaders can create events for their community to get involved with and set goals for their group on an event by event basis. When a community leader creates an event users can pledge to participate in the event / contribute in some way. The goal of this app is to allow local communities to have a better way to communicate effectively about upcoming events that their group is involved with. There will be a forum-style discussion section where users can post suggestions for events or inquire about information relating to a community.  
