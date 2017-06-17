@@ -17,7 +17,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Learn how to use the Firebase platform on the Web">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Friendly Chat</title>
+  <title>CFC</title>
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
@@ -66,7 +66,7 @@
           Sign-out
         </button>
         <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          <i class="material-icons">account_circle</i>Sign-in with Google
+          <i class="material-icons">account_circle</i>SIGN-IN
         </button>
       </div>
     </div>
@@ -89,9 +89,103 @@
     </div>
   </main>
 
+  <!-- Modal Structure for Creating Event-->
+   <div id="modal1" class="modal modal-fixed-footer">
+     <div class="modal-content">
+       <h4>Create a Community</h4>
+       <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Community name" id="community_name" type="text" class="validate">
+          <label for="community_name">Community Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="description" class="materialize-textarea"></textarea>
+          <label for="description">Description</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+      <select>
+        <option value="" disabled selected></option>
+        <option value="1">Public</option>
+        <option value="2">Private</option>
+      </select>
+    <label>Is your community public or private?</label>
+    </div>
+    </form>
+  </div>
+     </div>
+     <div class="modal-footer">
+       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
+     </div>
+   </div>
+
+   <!-- Modal Structure for Creating Community-->
+    <div id="modal2" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Create an Event</h4>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Placeholder" id="event_name" type="text" class="validate">
+                <label for="first_name">Event Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="s_date" type="text" class="validate">
+                <label for="disabled">Start Date</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="e_date" type="text" class="validate">
+                <label for="disabled">End Date</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                  <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Community 1</option>
+                    <option value="2">Community 2</option>
+                    <option value="3">Community 3</option>
+                  </select>
+                  <label>Select a Community </label>
+              </div>
+            </div>
+            <div class="row">
+              <label> Add Event Picture </label>
+              <form action="#">
+               <div class="file-field input-field">
+                 <div class="btn">
+                   <span>File</span>
+                   <input type="file">
+                 </div>
+                 <div class="file-path-wrapper">
+                   <input class="file-path validate" type="text">
+                 </div>
+               </div>
+             </form>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
+      </div>
+    </div>
+
   <div class="fixed-action-btn">
+<<<<<<< HEAD
     <a id="menu" class="waves-effect waves-light btn btn-floating"">
       <i class="large material-icons">mode_edit</i>
+=======
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">explore</i>
+>>>>>>> 38b1d417e44744479d5d0d637e0c99ee0e48683d
     </a>
 
     <div class="tap-target" data-activates="menu">
@@ -102,10 +196,8 @@
     </div>
 
     <ul>
-      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+      <li><a href="#modal1" class="btn-floating green"><i class="material-icons">event</i></a></li>
+      <li><a href="#modal2" class="btn-floating blue"><i class="material-icons">language</i></a></li>
     </ul>
 
   </div>

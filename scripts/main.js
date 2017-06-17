@@ -15,12 +15,22 @@
  */
 'use strict';
 
+
+$(document).ready(function() {
+   $('select').material_select();
+ });
+
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal').modal();
+});
+
 // Initializes CFC.
 function CFC() {
   this.checkSetup();
 
   // Shortcuts to DOM Elements.
-  this.messageList = document.getElementById('messages');
+  this.communityList = document.getElementById('messages');
   this.messageForm = document.getElementById('message-form');
   this.messageInput = document.getElementById('message');
   this.submitButton = document.getElementById('submit');
@@ -32,6 +42,7 @@ function CFC() {
   this.signInButton = document.getElementById('sign-in');
   this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
+  this.communities = [];
 
   this.initFirebase();
   this.loadCommunities();
@@ -65,8 +76,10 @@ CFC.prototype.initFirebase = function() {
 CFC.prototype.loadCommunities = function() {
   this.communitiesRef = this.database.ref('communities');
   this.communitiesRef.off();
+  var that = this;
   this.communitiesRef.on("value", function(snapshot) {
     var cardContainer = $('.cards-container');
+    that.communities = snapshot.val();
     snapshot.val().forEach(function (community) {
       cardContainer.append(CFC.communityToString(community.imageUri, community.name, community.description) + '<br/>');
     });
@@ -89,6 +102,20 @@ CFC.prototype.loadMessages = function() {
   }.bind(this);
   this.messagesRef.limitToLast(12).on('child_added', setMessage);
   this.messagesRef.limitToLast(12).on('child_changed', setMessage);
+};
+
+CFC.prototype.filterCommunities = function(query) {
+  $('.cards-container').html('');
+  var results = this.communities.filter(function(community) {
+    return community.name.indexOf(query) != -1;
+  });
+  this.displayCommunities(results);
+};
+
+CFC.prototype.displayCommunities = function(communities) {
+  communities.forEach(function (community) {
+    $('.cards-container').append(CFC.communityToString(community.name, community.description) + '<br/>');
+  });
 };
 
 // Saves a new message on the Firebase DB.
@@ -337,7 +364,13 @@ window.onload = function() {
   window.CFC = new CFC();
 };
 
+
 $(document).ready(function() {
     $('.tap-target').tapTarget('open');
   }
 );
+
+$('#search').on('input',function(e){
+  var query = $('#search').val();
+  CFC.filterCommunities(query);
+});
