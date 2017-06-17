@@ -114,7 +114,7 @@ CFC.prototype.filterCommunities = function(query) {
 
 CFC.prototype.displayCommunities = function(communities) {
   communities.forEach(function (community) {
-    $('.cards-container').append(CFC.communityToString(community.name, community.description) + '<br/>');
+    $('.cards-container').append(CFC.communityToString(community.imageUri, community.name, community.description) + '<br/>');
   });
 };
 
