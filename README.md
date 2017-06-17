@@ -3,7 +3,7 @@
 ## Development Environment Setup
 ```
 npm install
-npm run start
+npm start
 ```
 
 ## Deploying to Firebase
