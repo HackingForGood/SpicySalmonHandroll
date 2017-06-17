@@ -2,37 +2,37 @@
     {
       "name": "Harvard University",
       "description": "Harvard University is devoted to excellence in teaching, learning, and research, and to developing leaders in many disciplines who make a difference globally.",
-      "image-uri" : "http://pic15.nipic.com/20110708/2004813_132436104000_2.jpg"
+      "imageUri" : "http://pic15.nipic.com/20110708/2004813_132436104000_2.jpg"
     },
 
     {
       "name": "Google Cambridge",
       "description": "We do googly things.",
-      "image-uri" : "http://wp.streetwise.co/wp-content/uploads//2014/08//DSC_63.jpg"
+      "imageUri" : "http://wp.streetwise.co/wp-content/uploads//2014/08//DSC_63.jpg"
     },
 
     {
       "name":  "St. John Parish",
       "description": "Devoted to helping those in need.",
-      "image-uri" : "https://upload.wikimedia.org/wikipedia/commons/c/c6/First_Parish_Church%2C_Brunswick_ME.JPG"
+      "imageUri" : "https://upload.wikimedia.org/wikipedia/commons/c/c6/First_Parish_Church%2C_Brunswick_ME.JPG"
     },
 
     {
       "name":  "El Tigre's Self-Defense Academy",
       "description": "We host events to help teach children and adults the basics of Self-Defense ",
-      "image-uri" : "https://img.grouponcdn.com/deal/2q6aAjtQy9NFJncFR95j/mN-2048x1229/v1/c700x420.jpg"
+      "imageUri" : "https://img.grouponcdn.com/deal/2q6aAjtQy9NFJncFR95j/mN-2048x1229/v1/c700x420.jpg"
     },
 
     {
       "name":  "Dr. Martin Luther King Jr. School",
       "description": "We work with parents to help get their children involved in community service at a young age.",
-      "image-uri" : "http://www5.milwaukee.k12.wi.us/school/kingjr/files/2013/02/mlkschool_fullsize_story1.jpg"
+      "imageUri" : "http://www5.milwaukee.k12.wi.us/school/kingjr/files/2013/02/mlkschool_fullsize_story1.jpg"
     },
 
     {
       "name":  "Teachers for Education",
       "description": "A community devoted to helping make schools a better place for students to learn.",
-      "image-uri" : "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Red_apple_with_leaf.svg/200px-Red_apple_with_leaf.svg.png"
+      "imageUri" : "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Red_apple_with_leaf.svg/200px-Red_apple_with_leaf.svg.png"
     }
 
 ]
