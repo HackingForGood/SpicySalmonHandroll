@@ -18,7 +18,6 @@
 // Initializes CFC.
 function CFC() {
   this.checkSetup();
-  this.loadCommunities();
 
   // Shortcuts to DOM Elements.
   this.messageList = document.getElementById('messages');
@@ -34,25 +33,24 @@ function CFC() {
   this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
-  // Saves message on form submit.
-  this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
-  this.signOutButton.addEventListener('click', this.signOut.bind(this));
-  this.signInButton.addEventListener('click', this.signIn.bind(this));
-
-  // Toggle for the button.
-  var buttonTogglingHandler = this.toggleButton.bind(this);
-  this.messageInput.addEventListener('keyup', buttonTogglingHandler);
-  this.messageInput.addEventListener('change', buttonTogglingHandler);
-
-  // Events for image upload.
-  this.submitImageButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    this.mediaCapture.click();
-  }.bind(this));
-  this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
-
   this.initFirebase();
+  this.loadCommunities();
 }
+
+CFC.prototype.communityToString = function(name, description) {
+  return '<div class="card horizontal">' +
+            '<div class="card-image">' +
+              '<img src="http://lorempixel.com/100/190/nature/">' +
+            '</div>' +
+            '<div class="card-stacked">' +
+              '<div class="card-content">' +
+                '<h5>' + name + '</h5>' +
+                '<p>' + description + ' </p>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+};
+
 
 // Sets up shortcuts to Firebase features and initiate firebase auth.
 CFC.prototype.initFirebase = function() {
@@ -68,7 +66,10 @@ CFC.prototype.loadCommunities = function() {
   this.communitiesRef = this.database.ref('communities');
   this.communitiesRef.off();
   this.communitiesRef.on("value", function(snapshot) {
-    console.log(snapshot.val());
+    var cardContainer = $('.cards-container');
+    snapshot.val().forEach(function (community) {
+      cardContainer.append(CFC.communityToString(community.name, community.description) + '<br/>');
+    });
   }, function (error) {
     console.log("Error: " + error.code);
   });

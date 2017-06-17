@@ -17,6 +17,12 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+.cards-container {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
 main, #messages-card {
   height: 100%;
   padding-bottom: 0;
@@ -38,7 +44,6 @@ main, #messages-card {
 }
 .material-icons {
   font-size: 36px;
-  top: 8px;
   position: relative;
 }
 .mdl-layout__header-row {
