@@ -17,7 +17,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Learn how to use the Firebase platform on the Web">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Friendly Chat</title>
+  <title>CFC</title>
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
@@ -66,11 +66,23 @@
           Sign-out
         </button>
         <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          <i class="material-icons">account_circle</i>Sign-in with Google
+          <i class="material-icons">account_circle</i>SIGN-IN
         </button>
       </div>
     </div>
   </header>
+
+  <nav class="search-bar">
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
 
   <main class="mdl-layout__content mdl-color--white-100">
     <div class="cards-container">
