@@ -27,13 +27,13 @@
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Friendly Chat">
+  <meta name="application-name" content="Communities For Communities">
   <meta name="theme-color" content="#303F9F">
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Friendly Chat">
+  <meta name="apple-mobile-web-app-title" content="Communities for Communities">
   <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
 
   <!-- Tile icon for Win8 -->
@@ -53,10 +53,10 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+  <header class="mdl-layout__header mdl-color-text--white mdl-color-- deep-orange lighten-3-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-        <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
+        <h3><i class="material-icons">local_florist</i> Communities for Communities</h3>
       </div>
       <div id="user-container">
         <div hidden id="user-pic"></div>
@@ -71,7 +71,7 @@
     </div>
   </header>
 
-  <main class="mdl-layout__content mdl-color--grey-100">
+  <main class="mdl-layout__content mdl-color--white-100">
     <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
 
       <!-- Messages container -->
@@ -106,6 +106,20 @@
     </div>
   </main>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCb8I-GEmx4Vj2lwQ2MSDrMNwlkWqfgs0o",
+    authDomain: "communities-for-communities.firebaseapp.com",
+    databaseURL: "https://communities-for-communities.firebaseio.com",
+    projectId: "communities-for-communities",
+    storageBucket: "communities-for-communities.appspot.com",
+    messagingSenderId: "1058210799333"
+  };
+  firebase.initializeApp(config);
+</script>
 
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->

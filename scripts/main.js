@@ -18,6 +18,7 @@
 // Initializes CFC.
 function CFC() {
   this.checkSetup();
+  this.loadCommunities();
 
   // Shortcuts to DOM Elements.
   this.messageList = document.getElementById('messages');
@@ -61,6 +62,16 @@ CFC.prototype.initFirebase = function() {
   this.storage = firebase.storage();
   // Initiates Firebase auth and listen to auth state changes.
   this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+};
+
+CFC.prototype.loadCommunities = function() {
+  this.communitiesRef = this.database.ref('communities');
+  this.communitiesRef.off();
+  this.communitiesRef.on("value", function(snapshot) {
+    console.log(snapshot.val());
+  }, function (error) {
+    console.log("Error: " + error.code);
+  });
 };
 
 // Loads chat messages history and listens for upcoming ones.
