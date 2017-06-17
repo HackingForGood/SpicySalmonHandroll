@@ -38,10 +38,10 @@ function CFC() {
   this.loadCommunities();
 }
 
-CFC.prototype.communityToString = function(name, description) {
+CFC.prototype.communityToString = function(imageUri, name, description) {
   return '<div class="card horizontal">' +
             '<div class="card-image">' +
-              '<img src="http://lorempixel.com/100/190/nature/">' +
+              '<img src=' + imageUri + '>' +
             '</div>' +
             '<div class="card-stacked">' +
               '<div class="card-content">' +
@@ -71,7 +71,7 @@ CFC.prototype.loadCommunities = function() {
     var cardContainer = $('.cards-container');
     that.communities = snapshot.val();
     snapshot.val().forEach(function (community) {
-      cardContainer.append(CFC.communityToString(community.name, community.description) + '<br/>');
+      cardContainer.append(CFC.communityToString(community.imageUri, community.name, community.description) + '<br/>');
     });
   }, function (error) {
     console.log("Error: " + error.code);
