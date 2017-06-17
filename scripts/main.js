@@ -44,6 +44,9 @@ function CFC() {
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
   this.communities = [];
 
+  this.signOutButton.addEventListener('click', this.signOut.bind(this));
+  this.signInButton.addEventListener('click', this.signIn.bind(this));
+
   this.initFirebase();
   this.loadCommunities();
 }
